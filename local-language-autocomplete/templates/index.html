@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Punjabi Autocomplete Search</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header class="topbar">
+        <a class="brand" href="/">ਅੱਖਰ<span>AI</span></a>
+        <span class="language-label">Punjabi Search</span>
+    </header>
+
+    <main class="hero">
+        <div class="tag">LOCAL LANGUAGE TECHNOLOGY</div>
+
+        <h1>Find the right word.<br>
+            <span>In your language.</span>
+        </h1>
+
+        <p class="subtitle">
+            Type in Punjabi and discover smart word suggestions,
+            powered by Trie and Priority Queue.
+        </p>
+
+        <section class="search-card">
+            <label for="searchInput">Search Punjabi words</label>
+
+            <div class="search-box">
+                <span class="search-icon" aria-hidden="true">⌕</span>
+
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="ਇੱਥੇ ਲਿਖੋ..."
+                    autocomplete="off"
+                    spellcheck="false"
+                    aria-label="Type a Punjabi word"
+                    aria-controls="suggestions"
+                    aria-autocomplete="list">
+
+                <button id="clearBtn" type="button"
+                        aria-label="Clear search">×</button>
+            </div>
+
+            <div id="status" class="status" aria-live="polite">
+                Start typing to see suggestions.
+            </div>
+
+            <ul id="suggestions" class="suggestions"
+                role="listbox"></ul>
+
+            <div class="examples">
+                <span>Try:</span>
+                <button class="example" type="button">ਪੰ</button>
+                <button class="example" type="button">ਕਿ</button>
+                <button class="example" type="button">ਸ</button>
+                <button class="example" type="button">ਮ</button>
+            </div>
+        </section>
+
+        <section class="features">
+            <article class="feature">
+                <div class="feature-icon">⌘</div>
+                <h2>Trie Search</h2>
+                <p>Find matching prefixes efficiently.</p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">↕</div>
+                <h2>Smart Ranking</h2>
+                <p>Popular words appear first.</p>
+            </article>
+
+            <article class="feature">
+                <div class="feature-icon">▤</div>
+                <h2>SQLite Storage</h2>
+                <p>Save vocabulary and word frequency.</p>
+            </article>
+        </section>
+
+        <p class="footer-note">
+            Built with Python · Flask · Trie · Heap · SQLite
+        </p>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"
+            defer></script>
+</body>
+</html>
